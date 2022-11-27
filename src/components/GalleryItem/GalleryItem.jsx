@@ -22,9 +22,9 @@ function GalleryItem({galleryItem, getGallery}){
     }
     // Render the gallery item on the DOM.
     return(
-        <div class="item">
+        <div className="item">
             {galleryItem.clicked ? <p onClick={getDescription}>{galleryItem.description}</p> : <img onClick={getDescription} src={galleryItem.path} width='200px' height='200px' />}
-            <div class="like-section">
+            <div className="like-section">
                 <button onClick={addLike} className="like">Like</button>
                 <p>{galleryItem.likes} likes</p>
             </div>
