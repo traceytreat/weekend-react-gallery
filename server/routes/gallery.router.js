@@ -87,8 +87,23 @@ router.post('/', (req, res) => {
         })
         .catch(error => {
             console.log('router POST error', error);
-            res.sendStatus(500)
+            res.sendStatus(500);
         })
-});
+}); // END POST Route
+
+// DELETE Route
+router.delete('/:id', (req, res) => {
+    const queryText = `DELETE FROM gallery
+                        WHERE id = $1`
+    pool.query(queryText, [req.params.id])
+        .then(() => {
+            console.log('router DELETE successful');
+            res.sendStatus(204);
+        })
+        .catch(error => {
+            console.log('router DELETE error', error);
+            res.sendStatus(500);
+        })
+}); // END DELETE Route
 
 module.exports = router;
