@@ -5,6 +5,7 @@ import './GalleryList.css'
 function GalleryList({galleryList, getGallery}){
     return(
         <>
+            <h2>Gallery</h2>
             <section id="gallery">
                 {
                     galleryList.map(galleryItem => {
