@@ -1,0 +1,13 @@
+.form-path, .form-desc {
+    margin: 10px;
+}
+
+.form-add {
+    margin-bottom: 20px;
+}
+
+#gallery-form {
+    background-color: lightgray;
+    padding: 10px;
+
+}

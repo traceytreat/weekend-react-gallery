@@ -70,4 +70,25 @@ router.get('/', (req, res) => {
         });
 }); // END GET Route
 
+// POST Route
+router.post('/', (req, res) => {
+    const galleryItem = {
+        path: req.body.path,
+        description: req.body.description,
+    }
+    const queryText = `INSERT INTO gallery
+                        (path, description, likes, clicked)
+                        VALUES
+                        ($1, $2, 0, false)`
+    pool.query(queryText, [galleryItem.path, galleryItem.description])
+        .then(() => {
+            console.log('router POST successful');
+            res.sendStatus(201);
+        })
+        .catch(error => {
+            console.log('router POST error', error);
+            res.sendStatus(500)
+        })
+});
+
 module.exports = router;
