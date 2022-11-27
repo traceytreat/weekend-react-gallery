@@ -1,7 +1,8 @@
 import React from 'react';
 import GalleryItem from '../GalleryItem/GalleryItem'
+import './GalleryList.css'
 
-function GalleryList({galleryList}){
+function GalleryList({galleryList, getGallery}){
     return(
         <>
             <section id="gallery">
@@ -11,6 +12,7 @@ function GalleryList({galleryList}){
                             <GalleryItem
                                 key={galleryItem.id}
                                 galleryItem={galleryItem}
+                                getGallery={getGallery}
                             />
                         );
                     })

@@ -26,7 +26,6 @@ function App() {
                 galleryList={galleryList}
                 getGallery={getGallery}
             />
-            <img src="images/goat_small.jpg"/>
         </div>
     );
 }
