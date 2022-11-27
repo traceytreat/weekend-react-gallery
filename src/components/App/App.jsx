@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
+import Header from '../Header/Header';
 
 function App() {
 
@@ -19,9 +20,7 @@ function App() {
 
     return(
         <div className="App">
-            <header className="App-header">
-                <h1 className="App-title">Tracey's weekend react gallery</h1>
-            </header>
+            <Header />
             <GalleryList 
                 galleryList={galleryList}
                 getGallery={getGallery}
